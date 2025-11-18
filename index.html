@@ -57,7 +57,6 @@
           </button>
         </div>
       </div>
-
       <!-- mobile menu -->
       <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 dark:border-slate-800">
         <div class="px-4 py-4 flex flex-col gap-2">
@@ -69,33 +68,18 @@
         </div>
       </div>
     </header>
-
     <main class="flex-1">
-      <!-- HERO -->
-      <section id="home" class="max-w-6xl mx-auto px-4 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="space-y-6">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">Eliminate Manual Audit Vouching. Automate Financial Verification with AI.</h1>
-          <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl">Our platform seamlessly integrates cash and digital payments with your accounting software, automating vouching and cutting audit preparation time by up to 90%.</p>
-
-          <div class="flex flex-wrap gap-3">
-            <button id="startDemo" class="bg-accent text-[#072233] px-5 py-3 rounded-md font-semibold shadow">Start Free Demo</button>
-            <!-- <button id="watchDemo" class="border border-slate-300 dark:border-slate-700 px-5 py-3 rounded-md font-semibold">Watch 60-Second Demo</button> -->
-          </div>
-
-          <div class="flex items-center gap-4 mt-4">
-            <div class="flex items-center gap-2">
-              <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-                <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5v3l-10 5L2 20v-3z"/></svg>
-              </div>
-              <div>
-                <p class="text-sm font-semibold">Trusted by 500+ Indian businesses</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400">SOC 2 compliant • Used by CA firms</p>
-              </div>
-            </div>
+      <!-- HERO (Adapted to Circit-style: Full-width intro with benefits) -->
+      <section id="home" class="max-w-6xl mx-auto px-4 py-16 lg:py-24">
+        <div class="text-center space-y-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">A fully integrated AI platform for automated financial verification</h1>
+          <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">Bank/UPI feeds, OCR receipts, auto-vouching, and ledger posting — all in one place. Eliminate manual audit prep and cut time by 90%.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+            <button id="startDemo" class="bg-accent text-[#072233] px-6 py-3 rounded-md font-semibold shadow self-center">Start Free Demo</button>
+            <a href="#features" class="border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-md font-semibold">Learn More</a>
           </div>
         </div>
-
-        <div class="order-first lg:order-last flex items-center justify-center">
+        <div class="mt-16 flex items-center justify-center">
           <!-- Lottie placeholder (replace src with your Lottie JSON or file) -->
           <div class="w-full max-w-md rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow">
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -107,183 +91,218 @@
               autoplay
               style="width:100%;height:320px;">
             </lottie-player>
-            <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-400">3-step explainer: Connect → Match → Post to Ledger</p>
+            <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-400">Connect → Match → Post to Ledger</p>
           </div>
         </div>
       </section>
 
-      <!-- 5-step feature flow (detailed) -->
+      <!-- FEATURES (Circit-style: Vertical stack of feature cards with benefits and Learn More links) -->
       <section id="features" class="bg-white dark:bg-slate-900 border-t border-b border-slate-100 dark:border-slate-800">
         <div class="max-w-6xl mx-auto px-4 py-16">
-          <h2 class="text-2xl font-bold text-center">Product & Features — 5 Simple Steps</h2>
-          <p class="text-center text-slate-600 dark:text-slate-400 mt-2">From data ingestion to an always-updated general ledger.</p>
+          <h2 class="text-2xl font-bold text-center mb-2">Product & Features</h2>
+          <p class="text-center text-slate-600 dark:text-slate-400 mb-10">From data ingestion to an always-updated general ledger — automate every step.</p>
+          <div class="space-y-8">
+            <!-- Feature 1: Automated Data Ingestion -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-100 dark:border-slate-700">
+              <h3 class="text-xl font-bold mb-2">5 clicks, 100% automated data from all sources</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Connect bank APIs, UPI wallets, and upload receipts — OCR handles paper trails instantly.</p>
+              <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>• 90% time savings on data entry and digitization</li>
+                <li>• Secure integrations with PhonePe, Paytm, Google Pay</li>
+                <li>• Auto-flags incomplete or mismatched data</li>
+              </ul>
+              <a href="#how" class="mt-4 inline-block text-accent font-semibold text-sm hover:underline">Learn more</a>
+            </div>
 
-          <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Step 1 -->
-            <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">1</div>
-              <div>
-                <h3 class="font-semibold text-lg">Automated Data Ingestion</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Connect bank APIs, UPI wallets (PhonePe, Paytm, Google Pay) and upload paper receipts — OCR digitizes the paper trail automatically.</p>
-                <div class="flex flex-wrap gap-2 mt-3">
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">Bank API</span>
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">PhonePe</span>
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">Paytm</span>
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">OCR</span>
+            <!-- Feature 2: AI-Powered Vouching & Matching -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-100 dark:border-slate-700">
+              <h3 class="text-xl font-bold mb-2">AI matches transactions to invoices in real-time</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Advanced AI detects duplicates, anomalies, and learns your patterns for accurate vouching.</p>
+              <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>• Reduces manual review by 80%</li>
+                <li>• Flags unsupported or review-needed items automatically</li>
+                <li>• Integrates with your existing workflows</li>
+              </ul>
+              <a href="#how" class="mt-4 inline-block text-accent font-semibold text-sm hover:underline">Learn more</a>
+            </div>
+
+            <!-- Feature 3: Real-Time Audit Dashboard -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-100 dark:border-slate-700">
+              <h3 class="text-xl font-bold mb-2">Audit-ready dashboard with one-click exports</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Track status with badges: Verified, Unsupported, Needs Review. Export reports instantly.</p>
+              <!-- simple mockup -->
+              <div class="mt-4 border rounded-md overflow-hidden bg-white dark:bg-slate-900">
+                <div class="p-3 grid grid-cols-3 text-xs font-medium text-slate-500 dark:text-slate-300">
+                  <div>Txn ID</div><div>Amount</div><div>Status</div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">2</div>
-              <div>
-                <h3 class="font-semibold text-lg">AI-Powered Vouching & Matching</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Our AI matches transactions to invoices, flags anomalies, detects duplicates, and learns your patterns to reduce manual work.</p>
-              </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">3</div>
-              <div>
-                <h3 class="font-semibold text-lg">Real-Time Audit Dashboard</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">A clear dashboard shows transaction status badges: <span class="font-semibold text-green-600">Verified</span>, <span class="font-semibold text-yellow-600">Unsupported</span>, <span class="font-semibold text-red-600">Needs Review</span>. Export audit-ready reports with one click.</p>
-                <!-- simple mockup -->
-                <div class="mt-4 border rounded-md overflow-hidden bg-slate-50 dark:bg-slate-800">
-                  <div class="p-3 grid grid-cols-3 text-xs font-medium text-slate-500 dark:text-slate-300">
-                    <div>Txn ID</div><div>Amount</div><div>Status</div>
+                <div class="divide-y">
+                  <div class="p-3 grid grid-cols-3 items-center text-sm">
+                    <div>#A123</div><div>₹12,000</div><div><span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">Verified</span></div>
                   </div>
-                  <div class="divide-y">
-                    <div class="p-3 grid grid-cols-3 items-center text-sm">
-                      <div>#A123</div><div>₹12,000</div><div><span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">Verified</span></div>
-                    </div>
-                    <div class="p-3 grid grid-cols-3 items-center text-sm">
-                      <div>#A124</div><div>₹4,250</div><div><span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Unsupported</span></div>
-                    </div>
-                    <div class="p-3 grid grid-cols-3 items-center text-sm">
-                      <div>#A125</div><div>₹1,200</div><div><span class="px-2 py-1 rounded-full text-xs bg-red-100 text-red-800">Needs Review</span></div>
-                    </div>
+                  <div class="p-3 grid grid-cols-3 items-center text-sm">
+                    <div>#A124</div><div>₹4,250</div><div><span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Unsupported</span></div>
+                  </div>
+                  <div class="p-3 grid grid-cols-3 items-center text-sm">
+                    <div>#A125</div><div>₹1,200</div><div><span class="px-2 py-1 rounded-full text-xs bg-red-100 text-red-800">Needs Review</span></div>
                   </div>
                 </div>
               </div>
+              <a href="#features" class="mt-4 inline-block text-accent font-semibold text-sm hover:underline">Learn more</a>
             </div>
 
-            <!-- Step 4 -->
-            <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">4</div>
-              <div>
-                <h3 class="font-semibold text-lg">Direct-to-Ledger Posting</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Verified transactions generate accurate journal entries using rule-based + AI account classification (e.g., payment to 'Airtel' → Telephone Expense).</p>
-              </div>
+            <!-- Feature 4: Direct-to-Ledger Posting -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-100 dark:border-slate-700">
+              <h3 class="text-xl font-bold mb-2">Auto-post verified entries to your ledger</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Rule-based + AI classification generates accurate journals (e.g., Airtel → Telephone Expense).</p>
+              <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>• Instant GL updates for always-audit-ready books</li>
+                <li>• Exports to Tally, QuickBooks, Xero</li>
+                <li>• Role-based approvals and audit trails</li>
+              </ul>
+              <a href="#pricing" class="mt-4 inline-block text-accent font-semibold text-sm hover:underline">Learn more</a>
             </div>
 
-            <!-- Step 5 -->
-            <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">5</div>
-              <div>
-                <h3 class="font-semibold text-lg">Real-Time, Always-Updated General Ledger</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Your GL updates instantly as transactions are processed — always accurate and audit-ready.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-10 text-center">
-            <button class="bg-accent text-[#072233] px-6 py-3 rounded-md font-semibold">Ready to eliminate manual vouching? Start Free Demo</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- How It Works (infographic) -->
-      <section id="how" class="max-w-6xl mx-auto px-4 py-16">
-        <h2 class="text-2xl font-bold text-center">How It Works — In 5 Simple Steps</h2>
-        <div class="mt-10 relative">
-          <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent/40 to-transparent"></div>
-          <div class="space-y-10">
-            <!-- step row -->
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">1</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Connect</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Link your banks, PhonePe, Paytm, Google Pay, and other payment sources securely.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">2</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Upload</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Drag & drop invoices or snap photos with your mobile — OCR digitizes receipts.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">3</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Automate</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">AI matches transactions to invoices, verifies supporting docs, and flags anomalies.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">4</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Create Ledger / Journal</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Auto-generate accurate journal entries and classify accounts using AI + rules.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">5</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Review</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Get a 100% clean, audit-ready ledger and export reports instantly.</p>
-              </div>
+            <!-- Feature 5: Anomaly Detection & More -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-100 dark:border-slate-700">
+              <h3 class="text-xl font-bold mb-2">AI anomaly detection and secure collaboration</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Flag suspicious transactions, enable team reviews, and ensure compliance.</p>
+              <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>• GDPR & SOC 2 compliant</li>
+                <li>• Custom rules for your business</li>
+                <li>• 100% secure data handling</li>
+              </ul>
+              <a href="#contact" class="mt-4 inline-block text-accent font-semibold text-sm hover:underline">Learn more</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Extra features grid -->
-      <section class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+      <!-- TESTIMONIALS (Added Circit-style: Grid of quote cards) -->
+      <section class="max-w-6xl mx-auto px-4 py-16 bg-slate-50 dark:bg-slate-900">
+        <h2 class="text-2xl font-bold text-center mb-8">What Our Users Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+            <p class="text-slate-600 dark:text-slate-300 italic mb-4">"VouchAI saved us 4 hours per client on vouching — game-changer for audits."</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-sm font-bold text-primary">CA</div>
+              <p class="text-sm font-semibold">CA Firm Lead</p>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+            <p class="text-slate-600 dark:text-slate-300 italic mb-4">"Seamless integrations and AI matching make our ledger always ready."</p>
+            <p class="text-sm font-semibold">Retailer CFO</p>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+            <p class="text-slate-600 dark:text-slate-300 italic mb-4">"OCR and auto-posting cut our manual work by 90% — highly recommend."</p>
+            <p class="text-sm font-semibold">Ecommerce Owner</p>
+          </div>
+          <!-- Testimonial 4 -->
+          <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+            <p class="text-slate-600 dark:text-slate-300 italic mb-4">"Trusted platform for SOC 2 compliance and fast support."</p>
+            <p class="text-sm font-semibold">SMB Accountant</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGULATORY & STATS (Adapted Circit-style: Stats and compliance highlights) -->
+      <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-2xl font-bold text-center mb-2">Regulated for Secure Financial Automation</h2>
+        <p class="text-center text-slate-600 dark:text-slate-400 mb-8">We're built for compliance and scale — trusted by Indian businesses.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <p class="text-3xl font-bold text-accent mb-2">500+</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Indian businesses using VouchAI</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-accent mb-2">90%</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Time saved on audit prep</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-accent mb-2">SOC 2</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Compliant • GST & VAT ready</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS (Kept as infographic, but shortened to fit flow) -->
+      <section id="how" class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
         <div class="max-w-6xl mx-auto px-4 py-16">
-          <h3 class="text-xl font-bold text-center">More features</h3>
-          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Automated Journal Entries</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Auto-create and post journal entries to ledgers.</p>
-            </div>
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Anomaly Detection</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">AI flags suspicious transactions and duplicates.</p>
-            </div>
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Export to Tally / QuickBooks / Xero</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Seamless export options and integrations via standard formats and APIs.</p>
-            </div>
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Role-Based Access</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Define reviewer, approver and auditor roles with permissions and audit trail.</p>
+          <h2 class="text-2xl font-bold text-center">How It Works — In 5 Simple Steps</h2>
+          <div class="mt-10 relative">
+            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent/40 to-transparent"></div>
+            <div class="space-y-10">
+              <!-- Step 1 -->
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">1</div>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Connect</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Link banks, UPI, and payment sources securely.</p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">2</div>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Upload</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Drag & drop or snap photos — OCR digitizes.</p>
+                </div>
+              </div>
+              <!-- Step 3 -->
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">3</div>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Automate</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">AI matches, verifies, and flags issues.</p>
+                </div>
+              </div>
+              <!-- Step 4 -->
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">4</div>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Create Ledger</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Auto-generate journals with AI classification.</p>
+                </div>
+              </div>
+              <!-- Step 5 -->
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">5</div>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Review</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Export clean, audit-ready reports.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Pricing placeholder -->
+      <!-- FINAL CTA (Circit-style: Simple full-width CTA) -->
+      <section class="bg-slate-50 dark:bg-slate-900 py-16 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+          <hr class="border-slate-200 dark:border-slate-800 mb-8">
+          <h2 class="text-2xl font-bold mb-4">See what VouchAI can do for your firm</h2>
+          <p class="text-slate-600 dark:text-slate-400 mb-6">Automate vouching, speed up audits, and focus on growth.</p>
+          <button id="ctaFinal" class="bg-accent text-[#072233] px-6 py-3 rounded-md font-semibold shadow">Start Free Demo</button>
+        </div>
+      </section>
+
+      <!-- Pricing -->
       <section id="pricing" class="max-w-6xl mx-auto px-4 py-16">
         <h3 class="text-2xl font-bold text-center">Pricing</h3>
         <p class="text-center text-slate-600 dark:text-slate-400 mt-2">Flexible plans for startups, SMBs & CA firms. Contact us for enterprise pricing.</p>
-
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="p-6 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-center">
             <h4 class="font-semibold">Starter</h4>
@@ -310,7 +329,6 @@
       <section id="contact" class="max-w-6xl mx-auto px-4 py-16">
         <h3 class="text-2xl font-bold text-center">Contact & Demo</h3>
         <p class="text-center text-slate-600 dark:text-slate-400 mt-2">Request a demo or ask a question and our team will get back within one business day.</p>
-
         <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           <form id="contactForm" class="space-y-4 p-6 bg-slate-50 dark:bg-slate-800 rounded-lg">
             <input required class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Full name" name="name" />
@@ -322,7 +340,6 @@
               <span class="text-sm text-slate-500 dark:text-slate-400">Or email us at <a href="mailto:sales@vouchai.example" class="underline">sales@vouchai.example</a></span>
             </div>
           </form>
-
           <div class="p-6 rounded-lg bg-slate-50 dark:bg-slate-800">
             <h4 class="font-semibold">Office</h4>
             <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Mumbai, India • SOC 2 compliant • VAT & GST-ready exports</p>
@@ -337,9 +354,7 @@
           </div>
         </div>
       </section>
-
     </main>
-
     <!-- FOOTER -->
     <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
       <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -352,27 +367,22 @@
             <div class="text-xs text-slate-500 dark:text-slate-400">Automated financial vouching for modern businesses</div>
           </div>
         </div>
-
         <div class="text-sm text-slate-600 dark:text-slate-400">
           <a href="#features" class="mr-4 hover:text-accent">Features</a>
           <a href="#how" class="mr-4 hover:text-accent">How It Works</a>
           <a href="#pricing" class="mr-4 hover:text-accent">Pricing</a>
           <a href="#contact" class="hover:text-accent">Contact</a>
         </div>
-
         <div class="text-sm text-slate-500 dark:text-slate-400">&copy; <span id="yr"></span> VouchAI. All rights reserved.</div>
       </div>
     </footer>
   </div>
-
   <script>
     // small UI JS: mobile menu, smooth scroll, demo modal stub, contact form fake handler
     document.getElementById('yr').textContent = new Date().getFullYear();
-
     const mobileBtn = document.getElementById('mobileBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     mobileBtn?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-
     // smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
@@ -382,14 +392,12 @@
         if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); mobileMenu?.classList.add('hidden'); }
       });
     });
-
-    // Demo CTA
-    document.querySelectorAll('#startDemo, #ctaDemo').forEach(btn=>{
+    // Demo CTAs
+    document.querySelectorAll('#startDemo, #ctaDemo, #ctaFinal').forEach(btn=>{
       btn?.addEventListener('click', ()=> {
         alert('Demo request received — open a support ticket or integrate a scheduling modal here.');
       });
     });
-
     // Basic contact form handler (demo)
     document.getElementById('contactForm')?.addEventListener('submit', e=>{
       e.preventDefault();
