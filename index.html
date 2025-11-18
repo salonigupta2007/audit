@@ -1,390 +1,401 @@
 <!doctype html>
 <html class="light" lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>VouchAI — Automate Financial Verification</title>
-  <meta name="description" content="VouchAI automates financial vouching & audit preparation using AI. Connect bank/UPI feeds, OCR receipts, auto-vouch and post to ledger." />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#0b3666", /* dark navy */
-            accent: "#13ec5b", /* green success */
-            "bg-light": "#f7f8fb",
-            "bg-dark": "#071227"
-          },
-          fontFamily: { display: ["Space Grotesk", "sans-serif"] }
-        }
-      }
-    }
-  </script>
-  <style>
-    body { font-family: var(--tw-font-family-display); }
-    .material-icons { font-family: 'Material Symbols Outlined'; }
-  </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>VouchAI — Automate Financial Verification</title>
+  <meta name="description" content="VouchAI automates financial vouching & audit preparation using AI. Connect bank/UPI feeds, OCR receipts, auto-vouch and post to ledger." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0b3666", /* dark navy */
+            accent: "#13ec5b", /* green success */
+            "bg-light": "#f7f8fb",
+            "bg-dark": "#071227"
+          },
+          fontFamily: { display: ["Space Grotesk", "sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: var(--tw-font-family-display); }
+    .material-icons { font-family: 'Material Symbols Outlined'; }
+  </style>
 </head>
 <body class="bg-bg-light text-[#0b2740] dark:bg-bg-dark dark:text-white">
-  <div class="min-h-screen flex flex-col">
-        <header class="sticky top-0 z-50 bg-white/80 dark:bg-bg-dark/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
-      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <a href="#home" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center text-accent">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7 12l3 3 7-7-1.41-1.41L10 12.17 8.41 10.59 7 12z"/></svg>
-          </div>
-          <span class="text-xl font-bold">VouchAI</span>
-        </a>
-        <nav class="hidden md:flex gap-6 items-center">
-          <a class="text-sm hover:text-accent" href="#home">Home</a>
-          <a class="text-sm hover:text-accent" href="#how">How It Works</a>
-          <a class="text-sm hover:text-accent" href="#features">Features</a>
-          <a class="text-sm hover:text-accent" href="#pricing">Pricing</a>
-          <a class="text-sm hover:text-accent" href="#contact">Contact</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <button id="ctaDemo" class="hidden md:inline-flex items-center gap-2 bg-accent text-[#072233] px-4 py-2 rounded-md font-semibold shadow">Start Free Demo</button>
-          <button id="mobileBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">
-            <span class="material-icons">menu</span>
-          </button>
-        </div>
-      </div>
+  <div class="min-h-screen flex flex-col">
+    <!-- NAV -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-bg-dark/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center text-accent">
+            <!-- logo check -->
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7 12l3 3 7-7-1.41-1.41L10 12.17 8.41 10.59 7 12z"/></svg>
+          </div>
+          <span class="text-xl font-bold">VouchAI</span>
+        </a>
+        <nav class="hidden md:flex gap-6 items-center">
+          <a class="text-sm hover:text-accent" href="#home">Home</a>
+          <a class="text-sm hover:text-accent" href="#how">How It Works</a>
+          <a class="text-sm hover:text-accent" href="#features">Features</a>
+          <a class="text-sm hover:text-accent" href="#pricing">Pricing</a>
+          <a class="text-sm hover:text-accent" href="#contact">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button id="ctaDemo" class="hidden md:inline-flex items-center gap-2 bg-accent text-[#072233] px-4 py-2 rounded-md font-semibold shadow">Start Free Demo</button>
+          <button id="mobileBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">
+            <span class="material-icons">menu</span>
+          </button>
+        </div>
+      </div>
 
-            <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 dark:border-slate-800">
-        <div class="px-4 py-4 flex flex-col gap-2">
-          <a href="#home" class="py-2">Home</a>
-          <a href="#how" class="py-2">How It Works</a>
-          <a href="#features" class="py-2">Features</a>
-          <a href="#pricing" class="py-2">Pricing</a>
-          <a href="#contact" class="py-2">Contact</a>
-        </div>
-      </div>
-    </header>
+      <!-- mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 dark:border-slate-800">
+        <div class="px-4 py-4 flex flex-col gap-2">
+          <a href="#home" class="py-2">Home</a>
+          <a href="#how" class="py-2">How It Works</a>
+          <a href="#features" class="py-2">Features</a>
+          <a href="#pricing" class="py-2">Pricing</a>
+          <a href="#contact" class="py-2">Contact</a>
+        </div>
+      </div>
+    </header>
 
-    <main class="flex-1">
-            <section id="home" class="max-w-6xl mx-auto px-4 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="space-y-6">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">Eliminate Manual Audit Vouching. Automate Financial Verification with AI.</h1>
-          <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl">Our platform seamlessly integrates cash and digital payments with your accounting software, automating vouching and cutting audit preparation time by up to 90%.</p>
+    <main class="flex-1">
+      <!-- HERO -->
+      <section id="home" class="max-w-6xl mx-auto px-4 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div class="space-y-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">Eliminate Manual Audit Vouching. Automate Financial Verification with AI.</h1>
+          <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl">Our platform seamlessly integrates cash and digital payments with your accounting software, automating vouching and cutting audit preparation time by up to 90%.</p>
 
-          <div class="flex flex-wrap gap-3">
-            <button id="startDemo" class="bg-accent text-[#072233] px-5 py-3 rounded-md font-semibold shadow">Start Free Demo</button>
-                      </div>
+          <div class="flex flex-wrap gap-3">
+            <button id="startDemo" class="bg-accent text-[#072233] px-5 py-3 rounded-md font-semibold shadow">Start Free Demo</button>
+            <!-- <button id="watchDemo" class="border border-slate-300 dark:border-slate-700 px-5 py-3 rounded-md font-semibold">Watch 60-Second Demo</button> -->
+          </div>
 
-          <div class="flex items-center gap-4 mt-4">
-            <div class="flex items-center gap-2">
-              <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-                <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5v3l-10 5L2 20v-3z"/></svg>
-              </div>
-              <div>
-                <p class="text-sm font-semibold">Trusted by 500+ Indian businesses</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400">SOC 2 compliant • Used by CA firms</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <div class="flex items-center gap-4 mt-4">
+            <div class="flex items-center gap-2">
+              <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5v3l-10 5L2 20v-3z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Trusted by 500+ Indian businesses</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">SOC 2 compliant • Used by CA firms</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div class="order-first lg:order-last flex items-center justify-center">
-                    <div class="w-full max-w-md rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player
-              src="https://assets3.lottiefiles.com/packages/lf20_0yfsb3a1.json"
-              background="transparent"
-              speed="1"
-              loop
-              autoplay
-              style="width:100%;height:320px;">
-            </lottie-player>
-            <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-400">3-step explainer: Connect → Match → Post to Ledger</p>
-          </div>
-        </div>
-      </section>
+        <div class="order-first lg:order-last flex items-center justify-center">
+          <!-- Lottie placeholder (replace src with your Lottie JSON or file) -->
+          <div class="w-full max-w-md rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player
+              src="https://assets3.lottiefiles.com/packages/lf20_0yfsb3a1.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay
+              style="width:100%;height:320px;">
+            </lottie-player>
+            <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-400">3-step explainer: Connect → Match → Post to Ledger</p>
+          </div>
+        </div>
+      </section>
 
-            <section id="features" class="bg-white dark:bg-slate-900 border-t border-b border-slate-100 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 py-16">
-          <h2 class="text-2xl font-bold text-center">Product & Features — 5 Simple Steps</h2>
-          <p class="text-center text-slate-600 dark:text-slate-400 mt-2">From data ingestion to an always-updated general ledger.</p>
+      <!-- 5-step feature flow (detailed) -->
+      <section id="features" class="bg-white dark:bg-slate-900 border-t border-b border-slate-100 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-16">
+          <h2 class="text-2xl font-bold text-center">Product & Features — 5 Simple Steps</h2>
+          <p class="text-center text-slate-600 dark:text-slate-400 mt-2">From data ingestion to an always-updated general ledger.</p>
 
-          <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">1</div>
-              <div>
-                <h3 class="font-semibold text-lg">Automated Data Ingestion</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Connect bank APIs, UPI wallets (PhonePe, Paytm, Google Pay) and upload paper receipts — OCR digitizes the paper trail automatically.</p>
-                <div class="flex flex-wrap gap-2 mt-3">
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">Bank API</span>
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">PhonePe</span>
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">Paytm</span>
-                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">OCR</span>
-                </div>
-              </div>
-            </div>
+          <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Step 1 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">1</div>
+              <div>
+                <h3 class="font-semibold text-lg">Automated Data Ingestion</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Connect bank APIs, UPI wallets (PhonePe, Paytm, Google Pay) and upload paper receipts — OCR digitizes the paper trail automatically.</p>
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">Bank API</span>
+                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">PhonePe</span>
+                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">Paytm</span>
+                  <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs">OCR</span>
+                </div>
+              </div>
+            </div>
 
-                        <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">2</div>
-              <div>
-                <h3 class="font-semibold text-lg">AI-Powered Vouching & Matching</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Our AI matches transactions to invoices, flags anomalies, detects duplicates, and learns your patterns to reduce manual work.</p>
-              </div>
-            </div>
+            <!-- Step 2 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">2</div>
+              <div>
+                <h3 class="font-semibold text-lg">AI-Powered Vouching & Matching</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Our AI matches transactions to invoices, flags anomalies, detects duplicates, and learns your patterns to reduce manual work.</p>
+              </div>
+            </div>
 
-                        <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">3</div>
-              <div>
-                <h3 class="font-semibold text-lg">Real-Time Audit Dashboard</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">A clear dashboard shows transaction status badges: <span class="font-semibold text-green-600">Verified</span>, <span class="font-semibold text-yellow-600">Unsupported</span>, <span class="font-semibold text-red-600">Needs Review</span>. Export audit-ready reports with one click.</p>
-                                <div class="mt-4 border rounded-md overflow-hidden bg-slate-50 dark:bg-slate-800">
-                  <div class="p-3 grid grid-cols-3 text-xs font-medium text-slate-500 dark:text-slate-300">
-                    <div>Txn ID</div><div>Amount</div><div>Status</div>
-                  </div>
-                  <div class="divide-y">
-                    <div class="p-3 grid grid-cols-3 items-center text-sm">
-                      <div>#A123</div><div>₹12,000</div><div><span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">Verified</span></div>
-                    </div>
-                    <div class="p-3 grid grid-cols-3 items-center text-sm">
-                      <div>#A124</div><div>₹4,250</div><div><span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Unsupported</span></div>
-                    </div>
-                    <div class="p-3 grid grid-cols-3 items-center text-sm">
-                      <div>#A125</div><div>₹1,200</div><div><span class="px-2 py-1 rounded-full text-xs bg-red-100 text-red-800">Needs Review</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- Step 3 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">3</div>
+              <div>
+                <h3 class="font-semibold text-lg">Real-Time Audit Dashboard</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">A clear dashboard shows transaction status badges: <span class="font-semibold text-green-600">Verified</span>, <span class="font-semibold text-yellow-600">Unsupported</span>, <span class="font-semibold text-red-600">Needs Review</span>. Export audit-ready reports with one click.</p>
+                <!-- simple mockup -->
+                <div class="mt-4 border rounded-md overflow-hidden bg-slate-50 dark:bg-slate-800">
+                  <div class="p-3 grid grid-cols-3 text-xs font-medium text-slate-500 dark:text-slate-300">
+                    <div>Txn ID</div><div>Amount</div><div>Status</div>
+                  </div>
+                  <div class="divide-y">
+                    <div class="p-3 grid grid-cols-3 items-center text-sm">
+                      <div>#A123</div><div>₹12,000</div><div><span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">Verified</span></div>
+                    </div>
+                    <div class="p-3 grid grid-cols-3 items-center text-sm">
+                      <div>#A124</div><div>₹4,250</div><div><span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Unsupported</span></div>
+                    </div>
+                    <div class="p-3 grid grid-cols-3 items-center text-sm">
+                      <div>#A125</div><div>₹1,200</div><div><span class="px-2 py-1 rounded-full text-xs bg-red-100 text-red-800">Needs Review</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                        <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">4</div>
-              <div>
-                <h3 class="font-semibold text-lg">Direct-to-Ledger Posting</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Verified transactions generate accurate journal entries using rule-based + AI account classification (e.g., payment to 'Airtel' → Telephone Expense).</p>
-              </div>
-            </div>
+            <!-- Step 4 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">4</div>
+              <div>
+                <h3 class="font-semibold text-lg">Direct-to-Ledger Posting</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Verified transactions generate accurate journal entries using rule-based + AI account classification (e.g., payment to 'Airtel' → Telephone Expense).</p>
+              </div>
+            </div>
 
-                        <div class="flex gap-4 items-start">
-              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">5</div>
-              <div>
-                <h3 class="font-semibold text-lg">Real-Time, Always-Updated General Ledger</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Your GL updates instantly as transactions are processed — always accurate and audit-ready.</p>
-              </div>
-            </div>
-          </div>
+            <!-- Step 5 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold">5</div>
+              <div>
+                <h3 class="font-semibold text-lg">Real-Time, Always-Updated General Ledger</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-lg">Your GL updates instantly as transactions are processed — always accurate and audit-ready.</p>
+              </div>
+            </div>
+          </div>
 
-          <div class="mt-10 text-center">
-            <button class="bg-accent text-[#072233] px-6 py-3 rounded-md font-semibold">Ready to eliminate manual vouching? Start Free Demo</button>
-          </div>
-        </div>
-      </section>
+          <div class="mt-10 text-center">
+            <button class="bg-accent text-[#072233] px-6 py-3 rounded-md font-semibold">Ready to eliminate manual vouching? Start Free Demo</button>
+          </div>
+        </div>
+      </section>
 
-            <section id="how" class="max-w-6xl mx-auto px-4 py-16">
-        <h2 class="text-2xl font-bold text-center">How It Works — In 5 Simple Steps</h2>
-        <div class="mt-10 relative">
-          <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent/40 to-transparent"></div>
-          <div class="space-y-10">
-                        <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">1</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Connect</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Link your banks, PhonePe, Paytm, Google Pay, and other payment sources securely.</p>
-              </div>
-            </div>
+      <!-- How It Works (infographic) -->
+      <section id="how" class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-2xl font-bold text-center">How It Works — In 5 Simple Steps</h2>
+        <div class="mt-10 relative">
+          <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent/40 to-transparent"></div>
+          <div class="space-y-10">
+            <!-- step row -->
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">1</div>
+              </div>
+              <div>
+                <h3 class="font-semibold">Connect</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Link your banks, PhonePe, Paytm, Google Pay, and other payment sources securely.</p>
+              </div>
+            </div>
 
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">2</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Upload</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Drag & drop invoices or snap photos with your mobile — OCR digitizes receipts.</p>
-              </div>
-            </div>
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">2</div>
+              </div>
+              <div>
+                <h3 class="font-semibold">Upload</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Drag & drop invoices or snap photos with your mobile — OCR digitizes receipts.</p>
+              </div>
+            </div>
 
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">3</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Automate</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">AI matches transactions to invoices, verifies supporting docs, and flags anomalies.</p>
-              </div>
-            </div>
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">3</div>
+              </div>
+              <div>
+                <h3 class="font-semibold">Automate</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">AI matches transactions to invoices, verifies supporting docs, and flags anomalies.</p>
+              </div>
+            </div>
 
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">4</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Create Ledger / Journal</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Auto-generate accurate journal entries and classify accounts using AI + rules.</p>
-              </div>
-            </div>
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">4</div>
+              </div>
+              <div>
+                <h3 class="font-semibold">Create Ledger / Journal</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Auto-generate accurate journal entries and classify accounts using AI + rules.</p>
+              </div>
+            </div>
 
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">5</div>
-              </div>
-              <div>
-                <h3 class="font-semibold">Review & Sign-off</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Get a 100% clean, audit-ready ledger. **Digitally sign off on journals and automatically link supporting evidence to transactions.** Export reports instantly.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center font-bold">5</div>
+              </div>
+              <div>
+                <h3 class="font-semibold">Review</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Get a 100% clean, audit-ready ledger and export reports instantly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <section class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 py-16">
-          <h3 class="text-xl font-bold text-center">More features</h3>
-          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Automated Journal Entries</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Auto-create and post journal entries to ledgers.</p>
-            </div>
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Anomaly Detection</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">AI flags suspicious transactions and duplicates.</p>
-            </div>
-                        <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Digital Audit Confirmation</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Streamline external audit confirmations for balances, AP/AR, and bank statements.</p>
-            </div>
-                        <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Digital KYC/AML Checks</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Validate counterparties against regulatory databases for enhanced compliance.</p>
-            </div>
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Export to Tally / QuickBooks / Xero</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Seamless export options and integrations via standard formats and APIs.</p>
-            </div>
-            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <h4 class="font-semibold">Role-Based Access</h4>
-              <p class="text-sm text-slate-600 dark:text-slate-400">Define reviewer, approver and auditor roles with permissions and audit trail.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Extra features grid -->
+      <section class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-16">
+          <h3 class="text-xl font-bold text-center">More features</h3>
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <h4 class="font-semibold">Automated Journal Entries</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Auto-create and post journal entries to ledgers.</p>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <h4 class="font-semibold">Anomaly Detection</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">AI flags suspicious transactions and duplicates.</p>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <h4 class="font-semibold">Export to Tally / QuickBooks / Xero</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Seamless export options and integrations via standard formats and APIs.</p>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <h4 class="font-semibold">Role-Based Access</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Define reviewer, approver and auditor roles with permissions and audit trail.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <section id="pricing" class="max-w-6xl mx-auto px-4 py-16">
-        <h3 class="text-2xl font-bold text-center">Pricing</h3>
-        <p class="text-center text-slate-600 dark:text-slate-400 mt-2">Flexible plans for startups, SMBs & CA firms. Contact us for enterprise pricing.</p>
+      <!-- Pricing placeholder -->
+      <section id="pricing" class="max-w-6xl mx-auto px-4 py-16">
+        <h3 class="text-2xl font-bold text-center">Pricing</h3>
+        <p class="text-center text-slate-600 dark:text-slate-400 mt-2">Flexible plans for startups, SMBs & CA firms. Contact us for enterprise pricing.</p>
 
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-center">
-            <h4 class="font-semibold">Starter</h4>
-            <p class="text-3xl font-bold mt-3">₹4,999<span class="text-sm font-normal">/mo</span></p>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Up to 5 users • Basic integrations • OCR</p>
-            <button class="mt-4 bg-accent px-4 py-2 rounded-md font-semibold">Start Free Demo</button>
-          </div>
-          <div class="p-6 rounded-lg border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-center shadow">
-            <h4 class="font-semibold">Growth</h4>
-            <p class="text-3xl font-bold mt-3">₹14,999<span class="text-sm font-normal">/mo</span></p>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Advanced AI matching • Exports • Priority support</p>
-            <button class="mt-4 bg-accent px-4 py-2 rounded-md font-semibold">Start Free Demo</button>
-          </div>
-          <div class="p-6 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-center">
-            <h4 class="font-semibold">Enterprise</h4>
-            <p class="text-3xl font-bold mt-3">Contact Us</p>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Custom SLAs • Dedicated onboarding • On-prem options</p>
-            <button class="mt-4 border border-slate-300 px-4 py-2 rounded-md font-semibold">Contact Sales</button>
-          </div>
-        </div>
-      </section>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-center">
+            <h4 class="font-semibold">Starter</h4>
+            <p class="text-3xl font-bold mt-3">₹4,999<span class="text-sm font-normal">/mo</span></p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Up to 5 users • Basic integrations • OCR</p>
+            <button class="mt-4 bg-accent px-4 py-2 rounded-md font-semibold">Start Free Demo</button>
+          </div>
+          <div class="p-6 rounded-lg border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-center shadow">
+            <h4 class="font-semibold">Growth</h4>
+            <p class="text-3xl font-bold mt-3">₹14,999<span class="text-sm font-normal">/mo</span></p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Advanced AI matching • Exports • Priority support</p>
+            <button class="mt-4 bg-accent px-4 py-2 rounded-md font-semibold">Start Free Demo</button>
+          </div>
+          <div class="p-6 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-center">
+            <h4 class="font-semibold">Enterprise</h4>
+            <p class="text-3xl font-bold mt-3">Contact Us</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Custom SLAs • Dedicated onboarding • On-prem options</p>
+            <button class="mt-4 border border-slate-300 px-4 py-2 rounded-md font-semibold">Contact Sales</button>
+          </div>
+        </div>
+      </section>
 
-            <section id="contact" class="max-w-6xl mx-auto px-4 py-16">
-        <h3 class="text-2xl font-bold text-center">Contact & Demo</h3>
-        <p class="text-center text-slate-600 dark:text-slate-400 mt-2">Request a demo or ask a question and our team will get back within one business day.</p>
+      <!-- Contact -->
+      <section id="contact" class="max-w-6xl mx-auto px-4 py-16">
+        <h3 class="text-2xl font-bold text-center">Contact & Demo</h3>
+        <p class="text-center text-slate-600 dark:text-slate-400 mt-2">Request a demo or ask a question and our team will get back within one business day.</p>
 
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <form id="contactForm" class="space-y-4 p-6 bg-slate-50 dark:bg-slate-800 rounded-lg">
-            <input required class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Full name" name="name" />
-            <input required type="email" class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Email" name="email" />
-            <input class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Company" name="company" />
-            <textarea class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Message / What would you like to see in the demo?" name="message"></textarea>
-            <div class="flex items-center gap-3">
-              <button type="submit" class="bg-accent text-[#072233] px-4 py-2 rounded-md font-semibold">Request Demo</button>
-              <span class="text-sm text-slate-500 dark:text-slate-400">Or email us at <a href="mailto:sales@vouchai.example" class="underline">sales@vouchai.example</a></span>
-            </div>
-          </form>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form id="contactForm" class="space-y-4 p-6 bg-slate-50 dark:bg-slate-800 rounded-lg">
+            <input required class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Full name" name="name" />
+            <input required type="email" class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Email" name="email" />
+            <input class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Company" name="company" />
+            <textarea class="w-full p-3 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" placeholder="Message / What would you like to see in the demo?" name="message"></textarea>
+            <div class="flex items-center gap-3">
+              <button type="submit" class="bg-accent text-[#072233] px-4 py-2 rounded-md font-semibold">Request Demo</button>
+              <span class="text-sm text-slate-500 dark:text-slate-400">Or email us at <a href="mailto:sales@vouchai.example" class="underline">sales@vouchai.example</a></span>
+            </div>
+          </form>
 
-          <div class="p-6 rounded-lg bg-slate-50 dark:bg-slate-800">
-            <h4 class="font-semibold">Office</h4>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Mumbai, India • SOC 2 compliant • VAT & GST-ready exports</p>
-            <div class="mt-4">
-              <p class="text-sm font-medium">Trusted by</p>
-              <div class="flex gap-3 mt-3 flex-wrap">
-                <div class="px-3 py-2 bg-white dark:bg-slate-900 rounded shadow-sm text-xs">CA Firm</div>
-                <div class="px-3 py-2 bg-white dark:bg-slate-900 rounded shadow-sm text-xs">Retailer</div>
-                <div class="px-3 py-2 bg-white dark:bg-slate-900 rounded shadow-sm text-xs">Ecommerce</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div class="p-6 rounded-lg bg-slate-50 dark:bg-slate-800">
+            <h4 class="font-semibold">Office</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Mumbai, India • SOC 2 compliant • VAT & GST-ready exports</p>
+            <div class="mt-4">
+              <p class="text-sm font-medium">Trusted by</p>
+              <div class="flex gap-3 mt-3 flex-wrap">
+                <div class="px-3 py-2 bg-white dark:bg-slate-900 rounded shadow-sm text-xs">CA Firm</div>
+                <div class="px-3 py-2 bg-white dark:bg-slate-900 rounded shadow-sm text-xs">Retailer</div>
+                <div class="px-3 py-2 bg-white dark:bg-slate-900 rounded shadow-sm text-xs">Ecommerce</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    </main>
+    </main>
 
-        <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-      <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center text-accent">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
-          </div>
-          <div>
-            <div class="font-semibold">VouchAI</div>
-            <div class="text-xs text-slate-500 dark:text-slate-400">Automated financial vouching for modern businesses</div>
-          </div>
-        </div>
+    <!-- FOOTER -->
+    <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center text-accent">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+          </div>
+          <div>
+            <div class="font-semibold">VouchAI</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">Automated financial vouching for modern businesses</div>
+          </div>
+        </div>
 
-        <div class="text-sm text-slate-600 dark:text-slate-400">
-          <a href="#features" class="mr-4 hover:text-accent">Features</a>
-          <a href="#how" class="mr-4 hover:text-accent">How It Works</a>
-          <a href="#pricing" class="mr-4 hover:text-accent">Pricing</a>
-          <a href="#contact" class="hover:text-accent">Contact</a>
-        </div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">
+          <a href="#features" class="mr-4 hover:text-accent">Features</a>
+          <a href="#how" class="mr-4 hover:text-accent">How It Works</a>
+          <a href="#pricing" class="mr-4 hover:text-accent">Pricing</a>
+          <a href="#contact" class="hover:text-accent">Contact</a>
+        </div>
 
-        <div class="text-sm text-slate-500 dark:text-slate-400">&copy; <span id="yr"></span> VouchAI. All rights reserved.</div>
-      </div>
-    </footer>
-  </div>
+        <div class="text-sm text-slate-500 dark:text-slate-400">&copy; <span id="yr"></span> VouchAI. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
 
-  <script>
-    // small UI JS: mobile menu, smooth scroll, demo modal stub, contact form fake handler
-    document.getElementById('yr').textContent = new Date().getFullYear();
+  <script>
+    // small UI JS: mobile menu, smooth scroll, demo modal stub, contact form fake handler
+    document.getElementById('yr').textContent = new Date().getFullYear();
 
-    const mobileBtn = document.getElementById('mobileBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileBtn?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
 
-    // smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const href = a.getAttribute('href');
-        if(!href || href === '#') return;
-        const el = document.querySelector(href);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); mobileMenu?.classList.add('hidden'); }
-      });
-    });
+    // smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(!href || href === '#') return;
+        const el = document.querySelector(href);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); mobileMenu?.classList.add('hidden'); }
+      });
+    });
 
-    // Demo CTA
-    document.querySelectorAll('#startDemo, #ctaDemo').forEach(btn=>{
-      btn?.addEventListener('click', ()=> {
-        alert('Demo request received — open a support ticket or integrate a scheduling modal here.');
-      });
-    });
+    // Demo CTA
+    document.querySelectorAll('#startDemo, #ctaDemo').forEach(btn=>{
+      btn?.addEventListener('click', ()=> {
+        alert('Demo request received — open a support ticket or integrate a scheduling modal here.');
+      });
+    });
 
-    // Basic contact form handler (demo)
-    document.getElementById('contactForm')?.addEventListener('submit', e=>{
-      e.preventDefault();
-      alert('Thanks — demo request submitted. We will contact you soon.');
-      e.target.reset();
-    });
-  </script>
+    // Basic contact form handler (demo)
+    document.getElementById('contactForm')?.addEventListener('submit', e=>{
+      e.preventDefault();
+      alert('Thanks — demo request submitted. We will contact you soon.');
+      e.target.reset();
+    });
+  </script>
 </body>
 </html>
